@@ -1,0 +1,25 @@
+<div>
+  <h3>Total Students: {{CountOfStudents}}</h3>
+</div>
+<div>
+  <label>Enter the Student ID/Name/Email/Mobile: </label>
+  <input type="text" [(ngModel)]="searchstudent">
+</div>
+<table class="table table-hover table-striped" *ngIf="students.length>0;" align="center">
+  <thead>
+      <tr>
+          <th>Student Id</th>
+          <th>Student Name</th>
+          <th>Student Email</th>
+          <th>Contact</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let student of students | searchstudent: searchstudent">
+          <td>{{student.studentId}}</td>
+          <td>{{student.studentName}}</td>
+          <td>{{student.studentEmailId}}</td>
+          <td>{{student.contactNo}}</td>
+      </tr>
+  </tbody>
+</table>

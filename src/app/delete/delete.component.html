@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <label>Enter the Student ID: </label>
+    <input type="text" [(ngModel)]="searchstudent">
+  </div>
+  <br>
+  <br>
+  <div *ngIf="incomingresult.length>0">
+  <div >
+    <label>Student ID: </label>
+    <label>{{incomingresult[0].studentId}}</label>
+  </div>
+  <div>
+    <label>Student Name: </label>
+    <label>{{incomingresult[0].studentName}}</label>
+  </div>
+  <div>
+    <label>Student Email ID: </label>
+    <label>{{incomingresult[0].studentEmailId}}</label>
+  </div>
+  <div>
+    <label>Mobile No: </label>
+    <label>{{incomingresult[0].contactNo}}</label>
+  </div>
+</div>
+  <div>
+      <button type="submit" (click)="searchcomponent();">search</button>
+    <button *ngIf="incomingresult.length>0" type="submit" (click)="deletecomponent();">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <label>Enter the Student ID: </label>
+    <input type="text" [(ngModel)]="searchstudent">
+  </div>
+  <br>
+  <br>
+  <div *ngIf="incomingresult.length>0">
+    <div>
+      <label>Student ID</label>
+      <input type="text" [(ngModel)]="incomingresult[0].studentId" type="text">
+    </div>
+    <div>
+      <label>Student Name</label>
+      <input type="text" [(ngModel)]="incomingresult[0].studentName" type="text">
+    </div>
+    <div>
+      <label>Student Email Id</label>
+      <input type="text" [(ngModel)]="incomingresult[0].studentEmailId" type="text">
+    </div>
+    <div>
+      <label>Mobile NO</label>
+      <input type="text" [(ngModel)]="incomingresult[0].contactNo" type="text">
+    </div>
+  </div>
+  <div>
+    <button type="submit" (click)="searchcomponent();">search</button>
+    <button *ngIf="incomingresult.length>0" type="submit" (click)="updatestudent();">Update</button>
+  </div>
+</div>
